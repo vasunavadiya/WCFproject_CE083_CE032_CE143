@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel;
+using System.ServiceModel.Web;
+using System.Text;
+
+namespace WcfSOC
+{
+    [ServiceContract]
+    public interface IService1
+    {
+        [OperationContract]
+        IEnumerable<Person> GetPersons();
+        [OperationContract]
+        void InsertPerson(Person pobj);
+        [OperationContract]
+        void UpdatePerson(Person pobj);
+        [OperationContract]
+        void DeletePerson(int id);
+    }
+    [DataContract]
+    public class Person
+    {
+        [DataMember]
+        [Key]
+        [Required]
+        public int id { get; set; }
+        [DataMember]
+        [Required]
+        public string Name { get; set; }
+        [DataMember]
+        [Required]
+        public string Address { get; set; }
+        [DataMember]
+        [Required]
+        public DateTime date { get; set; }
+        [DataMember]
+        [Required]
+        public int Amount { get; set; }
+        [DataMember]
+        public string Iteam { get; set; }
+    }
+}
