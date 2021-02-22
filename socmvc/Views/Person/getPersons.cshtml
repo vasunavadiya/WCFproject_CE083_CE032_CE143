@@ -1,0 +1,83 @@
+﻿<html>
+<head>
+    <title>All Bill Detail</title>
+    
+        <style >
+        body {
+            font-family: "oswald", "Lora";
+            background: #116466;
+        }
+
+        form {
+            border-radius: 25px;
+            
+            position: relative;
+            margin: 0 auto;
+
+        }
+
+        input[type=text], input[type=password], input[type=date], input[type=int] {
+            width: 100%;
+            margin: 15px 0;
+            background-color: transparent;
+            color: black;
+            outline: none;
+            outline-style: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid #D9B08C 2px;
+        }
+
+        button {
+            
+            background-color: #D9B08C;
+            color: grey;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+        a {
+            color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Iteam</th>
+            <th>Amount</th>
+        </tr>
+        @foreach (var item in ViewBag.List)
+        {
+            <tr>
+                <th>@item.date</th>
+                <th>@item.id</th>
+                <th>@item.Name</th>
+                <th>@item.Address</th>
+                <th>@item.Iteam</th>
+                <th>@item.Amount</th>
+
+
+            </tr>
+
+        }
+    <tr>
+     <th><form action="@Url.Action("insertPerson")" method="get"><button>Insert Bill</button></form></th>   
+     <th><form action="@Url.Action("updatePerson")" method="get"><button>Update Bill</button></form></th>   
+      <th><form action="@Url.Action("getPersons")" method="post"><button>Get Bill</button></form></th>  
+       <th><form action="@Url.Action("deletePerson")" method="get"><button>Delete</button></form></th> 
+
+    </tr>
+    </table>
+    
+    @{
+        ViewBag.Title = "getPersons";
+    }
+</body>
+</html>
+

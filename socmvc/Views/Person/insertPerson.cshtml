@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "insertPerson";
+}
+
+<html>
+<head>
+    <title>Add your Bills</title>
+    <style>
+        body {
+            font-family: "oswald", "Lora";
+            background: #116466;
+        }
+
+        form {
+            border-radius: 25px;
+            background: #D1E8E2;
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 20px 20px;
+            width: 500px;
+        }
+
+        input[type=text], input[type=password],input[type=date],input[type=int] {
+            width: 100%;
+            margin: 15px 0;
+            background-color: transparent;
+            color: black;
+            outline: none;
+            outline-style: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid #D9B08C 2px;
+        }
+
+        button {
+            font-family: 'Helvetica';
+            background-color: #D9B08C;
+            color: grey;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 6px;
+        }
+
+            button:hover {
+                background-color: #FFCB9A;
+                color: black;
+            }
+
+        a {
+            color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+<center><h2>Add Your Bill</h2></center>
+<form method="post" action="@Url.Action("insertPerson")">
+    <table border="1">
+        <tr><th>Shop Name</th><th><input type="text" name="Name" /></th></tr>
+        <tr><th>Address</th><th><input type="text" name="Address" /></th></tr>
+        <tr><th>Date & Time </th><th><input type="date" name="date" /></th></tr>
+        <tr><th>Amount</th><th><input type="int" name="Amount" /></th></tr>
+        <tr><th>Iteams</th><th><input type="text" name="Iteam" /></th></tr>
+        <tr><th colspan="2"><button value="insert" >Insert Bill</button></th></tr>
+    </table>
+</form>
+</body>
+</html>

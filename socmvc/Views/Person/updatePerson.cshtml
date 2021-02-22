@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "updatePerson";
+}
+
+<html>
+<head>
+    <title>Update Your Details</title>
+    <style>
+        body {
+            font-family: "oswald", "Lora";
+            background: #116466;
+        }
+
+        form {
+            border-radius: 25px;
+            background: #D1E8E2;
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 20px 20px;
+            width: 500px;
+        }
+
+        input[type=text], input[type=password],input[type=date],input[type=int] {
+            width: 100%;
+            margin: 15px 0;
+            background-color: transparent;
+            color: black;
+            outline: none;
+            outline-style: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid #D9B08C 2px;
+        }
+
+        button {
+            font-family: 'Helvetica';
+            background-color: #D9B08C;
+            color: grey;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 6px;
+        }
+
+            button:hover {
+                background-color: #FFCB9A;
+                color: black;
+            }
+
+        a {
+            color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <center><h2>Udate Details</h2></center>
+
+    <form method="post" action="@Url.Action("updatePerson")">
+        <table border="1">
+            <tr><th>ID </th><th> <input type="text" name="id" /></th></tr>
+            <tr><th>Name </th> <th><input type="text" name="Name" /></th></tr>
+            <tr><th>Address</th><th><input type="text" name="Address" /></th></tr>
+            <tr><th>Date</th> <th><input type="date" name="date" /></th></tr>
+            <tr><th>Amount</th><th><input type="int" nmae="Amount" /></th></tr>
+            <tr><th>Iteams</th><th><input type="text" name="Iteam" /></th></tr>
+
+            <tr><th colspan="2"><button value="submit">Update Bill</button></th></tr>
+    </form>
+</body>
+</html>
